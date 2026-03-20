@@ -1,0 +1,18 @@
+<section class="page-container">
+    <div class="category-wrapper">
+        <a class="back-link" routerLink="/category">← back to categories</a>
+
+        <h1>{{ categoryName | titlecase }}</h1>
+
+        <div class="category-grid">
+            <div class="category-card" *ngFor="let product of filteredProducts">
+                <h2> {{ product.name}}</h2>
+                <p>{{ product.description}}</p>
+            </div>
+        </div>
+        
+        <p class="no-resulsts" *ngIf="filteredProducts.length === 0">
+            no products found in this category.
+        </p>
+    </div>
+    </section>

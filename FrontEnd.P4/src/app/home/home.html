@@ -1,0 +1,22 @@
+<section class="page-container">
+  <div class="home-wrapper">
+    <h1>Featured Products</h1>
+
+    <p *ngIf="loading">Loading Products...</p>
+
+    <p *ngIf="errorMessage">{{ errorMessage }}</p>
+
+    <div class="product-grid" *ngIf="!loading && featuredProducts.length > 0">
+      <div class="product-card" *ngFor="let product of featuredProducts">
+        <h2>{{ product.name }}</h2>
+        <span class="category-tag">{{ product.categoryName }}</span>
+        <p>{{ product.description }}</p>
+        <div class="price">{{ product.price }} kr</div>
+      </div>
+    </div>
+
+    <p *ngIf="!loading && featuredProducts.length === 0">
+      No products found.
+    </p>
+  </div>
+</section>

@@ -1,0 +1,86 @@
+.site-header {
+  background-color: #050505;
+  border-bottom: 2px solid #39ff14;
+  box-shadow: 0 0 15px #39ff14;
+}
+
+.header-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+}
+
+.site-title {
+  font-size: 32px;
+  font-weight: bold;
+  color: #39ff14;
+  letter-spacing: 3px;
+  cursor: pointer;
+  text-transform: uppercase;
+  text-shadow:
+    0 0 5px #39ff14,
+    0 0 10px #39ff14,
+    0 0 20px #39ff14;
+}
+
+/* NAVBAR */
+
+.main-nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #0a0a0a;
+}
+
+/* left side (login/register) */
+
+.nav-left {
+  display: flex;
+  gap: 25px;
+  justify-self: start;
+}
+
+/* center links */
+
+.nav-right {
+  display: flex;
+  gap: 25px;
+  justify-self: center;
+}
+
+/* ALL navbar links */
+
+.main-nav a {
+  color: #39ff14;
+  text-decoration: none;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: 0.2s;
+}
+
+.main-nav a:visited {
+  color: #39ff14;
+}
+
+/* hover effect */
+
+.main-nav a:hover {
+  text-shadow:
+    0 0 5px #39ff14,
+    0 0 10px #39ff14,
+    0 0 20px #39ff14;
+
+  transform: scale(1.05);
+}
+
+/* active route */
+
+.active {
+  color: #39ff14;
+  text-shadow:
+    0 0 5px #39ff14,
+    0 0 10px #39ff14,
+    0 0 20px #39ff14;
+}

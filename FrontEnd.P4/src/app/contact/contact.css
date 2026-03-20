@@ -1,0 +1,46 @@
+.page-container {
+  display: flex;
+  justify-content: center;
+  padding: 80px 20px;
+}
+
+.info-card {
+  max-width: 800px;
+  padding: 40px;
+  background-color: #0a0a0a;
+  border: 2px solid #39ff14;
+  border-radius: 10px;
+
+  box-shadow:
+    0 0 10px #39ff14,
+    0 0 20px #39ff14;
+
+  color: #eaeaea;
+}
+
+.info-card h1 {
+  color: #39ff14;
+  margin-bottom: 25px;
+
+  text-shadow:
+    0 0 5px #39ff14,
+    0 0 10px #39ff14;
+}
+
+.info-card p {
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+.contact-links {
+  margin-top: 30px;
+}
+
+.contact-item {
+  margin-bottom: 20px;
+}
+
+.contact-item span {
+  color: #39ff14;
+  font-weight: bold;
+}

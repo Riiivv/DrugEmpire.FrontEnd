@@ -1,0 +1,21 @@
+<header class="site-header">
+  <div class="header-top">
+    <div class="site-title" routerLink="/">
+      Drug Empire
+    </div>
+  </div>
+
+  <nav class="main-nav">
+    <div class="nav-left">
+      <a routerLink="/login" routerLinkActive="active">Login</a>
+      <a routerLink="/register" routerLinkActive="active">Register</a>
+    </div>
+
+    <div class="nav-right">
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+      <a routerLink="/category" routerLinkActive="active">Category</a>
+      <a routerLink="/about" routerLinkActive="active">About</a>
+      <a routerLink="/contact" routerLinkActive="active">Contact</a>
+    </div>
+  </nav>
+</header>
