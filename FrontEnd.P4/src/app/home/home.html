@@ -12,6 +12,9 @@
         <span class="category-tag">{{ product.categoryName }}</span>
         <p>{{ product.description }}</p>
         <div class="price">{{ product.price }} kr</div>
+
+        <button type="button" (click)="addToCart(product)";>
+        </button>
       </div>
     </div>
 

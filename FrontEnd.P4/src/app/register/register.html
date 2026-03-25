@@ -1,16 +1,51 @@
 <section class="page-container">
-    <div class="register-card">
-        <h1>Create Account</h1>
+  <div class="register-card">
+    <h1>Create Account</h1>
 
-        <form class="register-form">
-            <input type="text" placeholder="Username">
-            <input type="email" placeholder="Email">
-            <input type="text" placeholder="Country">
-            <input type="text" placeholder="Phone Number">
-            <input type="password" placeholder="password">
-            <input type="password" placeholder="Confirm Password">
+    <form class="register-form" (ngSubmit)="onSubmit()">
+      <input
+        type="text"
+        name="username"
+        [(ngModel)]="username"
+        placeholder="Username"
+      />
 
-            <button type="submit">Register</button>
-        </form>
-    </div>
+      <input
+        type="email"
+        name="email"
+        [(ngModel)]="email"
+        placeholder="Email"
+      />
+
+      <input
+        type="text"
+        name="firstName"
+        [(ngModel)]="firstName"
+        placeholder="First Name"
+      />
+
+      <input
+        type="text"
+        name="lastName"
+        [(ngModel)]="lastName"
+        placeholder="Last Name"
+      />
+
+      <input
+        type="text"
+        name="phoneNumber"
+        [(ngModel)]="phoneNumber"
+        placeholder="Phone Number"
+      />
+
+      <input
+        type="password"
+        name="password"
+        [(ngModel)]="password"
+        placeholder="Password"
+      />
+
+      <button type="submit">Register</button>
+    </form>
+  </div>
 </section>

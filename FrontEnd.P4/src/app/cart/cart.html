@@ -1,0 +1,25 @@
+<section class="page-container">
+  <div class="cart-wrapper">
+    <h1>My Cart</h1>
+
+    @if (errorMessage) {
+      <p class="status-message">{{ errorMessage }}</p>
+    }
+
+    @if (!errorMessage && !isLoading && cartItems.length === 0) {
+      <p class="status-message">Your cart is empty</p>
+    }
+
+    @if (cartItems.length > 0) {
+      <div class="cart-grid">
+        @for (item of cartItems; track item.cartItemId) {
+          <div class="cart-card">
+            <h2>{{ item.productName }}</h2>
+            <p><span>Quantity:</span> {{ item.quantity }}</p>
+            <p><span>Price:</span> {{ item.unitPrice }} kr</p>
+          </div>
+        }
+      </div>
+    }
+  </div>
+</section>

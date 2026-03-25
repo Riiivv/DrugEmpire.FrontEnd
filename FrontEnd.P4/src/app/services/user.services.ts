@@ -11,20 +11,20 @@ export class UserService{
         private http = inject(HttpClient);
     private apiUrl = `${environment.apiBaseUrl}/api/user`;
 
-    getAllShipments(): Observable<UserResponse[]> {
+    getAllUsers(): Observable<UserResponse[]> {
         return this.http.get<UserResponse[]>(this.apiUrl);
     }
 
-    getShipmentsById(id: number): Observable<UserResponse> {
+    getUsersById(id: number): Observable<UserResponse> {
         return this.http.get<UserResponse>(`${this.apiUrl}/${id}`);
     }
-    createShipment(request: UserRequest): Observable<UserResponse>{
+    createUser(request: UserRequest): Observable<UserResponse>{
         return this.http.post<UserResponse>(this.apiUrl, request);
     }
-    updateShipment(id: number, request: UserRequest): Observable<UserResponse>{
+    updateUser(id: number, request: UserRequest): Observable<UserResponse>{
         return this.http.put<UserResponse>(`${this.apiUrl}/${id}`, request);
     }
-    deleteShipment(id: number): Observable<void> {
+    deleteUser(id: number): Observable<void> {
         return this.http.delete<void>(`${this.apiUrl}/${id}`);
     }
 }

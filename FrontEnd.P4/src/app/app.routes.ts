@@ -6,6 +6,7 @@ import { About } from './about/about';
 import { Login } from './login/login';
 import { Register } from './register/register';
 import { CategoryDetails } from './category-details/category-details';
+import { Cart } from './cart/cart';
 
 
 
@@ -13,6 +14,7 @@ export const routes: Routes = [
     { path: '', component: Home, title: 'Forside'},
     { path: 'login', component: Login, title: 'Login'},
     { path: 'register', component: Register, title: 'Register'},
+    { path: 'cart', component: Cart, title: 'Cart' },
     { path: 'home', component: Home, title: 'Forside'},
     { path: 'category', component: Category, title: 'Category'},
     { path: 'category/:name', component: CategoryDetails, title: 'Category Details'},
