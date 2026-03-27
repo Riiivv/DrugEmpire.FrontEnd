@@ -1,8 +1,19 @@
-import { inject, Injectable } from "@angular/core";
+import { inject, Injectable, REQUEST } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { environment } from "../environments/environment";
 import { OrderRequest, OrderResponse } from "../interfaces/order.dto";
+
+export interface CheckoutRequest {
+  userId: number;
+  cartId: number;
+  shippingName: string;
+  shippingStreet: string;
+  shippingCity: string;
+  shippingPostalCode: string;
+  shippingCountry: string;
+  shippingPhoneNumber: string;
+}
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +26,9 @@ export class OrderService{
             return this.http.get<OrderResponse[]>(this.apiUrl);
     }
 
+    getOrdersByUserId(userId: number): Observable<OrderResponse[]> {
+  return this.http.get<OrderResponse[]>(`${this.apiUrl}/user/${userId}`);
+}
     getAllOrdersById(id: number): Observable<OrderResponse> {
                 return this.http.get<OrderResponse>(`${this.apiUrl}/${id}`);
     }
@@ -27,4 +41,7 @@ export class OrderService{
     deleteOrder(id: number): Observable<void> {
         return this.http.delete<void>(`${this.apiUrl}/${id}`);
     }
+  checkout(request: CheckoutRequest): Observable<any> {
+    return this.http.post(`${this.apiUrl}/checkout`, request);
+  }
 }

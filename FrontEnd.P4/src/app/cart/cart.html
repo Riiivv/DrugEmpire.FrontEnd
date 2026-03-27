@@ -15,10 +15,37 @@
         @for (item of cartItems; track item.cartItemId) {
           <div class="cart-card">
             <h2>{{ item.productName }}</h2>
-            <p><span>Quantity:</span> {{ item.quantity }}</p>
+
+            <div class="quantity-controls">
+              <button (click)="decreaseQuantity(item)">-</button>
+              <span>{{ item.quantity }}</span>
+              <button (click)="increaseQuantity(item)">+</button>
+            </div>
+
             <p><span>Price:</span> {{ item.unitPrice }} kr</p>
+
+            <button type="button" (click)="removeItem(item.cartItemId)">
+              Remove
+            </button>
           </div>
         }
+      </div>
+
+      <div class="cart-total">
+        <h2>Total: {{ totalPrice }} kr</h2>
+      </div>
+
+      <div class="checkout-form">
+        <h2>Shipping Info</h2>
+
+        <input type="text" name="shippingName" [(ngModel)]="shippingName" placeholder="Full name" />
+        <input type="text" name="shippingStreet" [(ngModel)]="shippingStreet" placeholder="Street" />
+        <input type="text" name="shippingCity" [(ngModel)]="shippingCity" placeholder="City" />
+        <input type="text" name="shippingPostalCode" [(ngModel)]="shippingPostalCode" placeholder="Postal code" />
+        <input type="text" name="shippingCountry" [(ngModel)]="shippingCountry" placeholder="Country" />
+        <input type="text" name="shippingPhoneNumber" [(ngModel)]="shippingPhoneNumber" placeholder="Phone number" />
+
+        <button type="button" (click)="checkout()">Checkout</button>
       </div>
     }
   </div>
