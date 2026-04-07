@@ -1,0 +1,16 @@
+.page-container,
+.orders-wrapper,
+.order-card,
+.order-card h1,
+.order-card h2,
+.order-card p,
+.status-message {
+  color: white;
+}
+
+.order-card {
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+  padding: 16px;
+  border-radius: 8px;
+}

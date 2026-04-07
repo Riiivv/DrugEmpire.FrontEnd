@@ -6,6 +6,7 @@ import { CartService } from '../services/cart.services';
 import { CartItemService } from '../cart-item/cart-item';
 import { CartItemResponse } from '../interfaces/cartItem.dto';
 import { OrderService } from '../services/order.services';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -27,15 +28,18 @@ export class Cart implements OnInit {
   shippingPostalCode = '';
   shippingCountry = '';
   shippingPhoneNumber = '';
+  orderSuccess = false;
 
   constructor(
     private cartService: CartService,
     private cartItemService: CartItemService,
     private orderService: OrderService,
-    private cdr: ChangeDetectorRef
+    private cdr: ChangeDetectorRef,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
+
     const user = localStorage.getItem('user');
 
     if (!user) {
@@ -44,6 +48,9 @@ export class Cart implements OnInit {
       this.cdr.detectChanges();
       return;
     }
+
+    const nav = history.state; if (nav?.orderSuccess) { this.orderSuccess = true;
+}
 
     this.currentUser = JSON.parse(user);
 
@@ -201,7 +208,12 @@ export class Cart implements OnInit {
             this.shippingPhoneNumber = '';
 
             this.cdr.detectChanges();
-            alert('Order created');
+
+            // ✅ REDIRECT I STEDET FOR ALERT
+
+            this.router.navigate(['/my-orders'], {
+              state: { orderSuccess: true }
+            });
           })
           .catch((err) => {
             console.log(err);

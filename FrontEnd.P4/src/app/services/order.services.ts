@@ -26,8 +26,8 @@ export class OrderService{
             return this.http.get<OrderResponse[]>(this.apiUrl);
     }
 
-    getOrdersByUserId(userId: number): Observable<OrderResponse[]> {
-  return this.http.get<OrderResponse[]>(`${this.apiUrl}/user/${userId}`);
+getMyOrders(userId: number): Observable<OrderResponse[]> {
+  return this.http.get<OrderResponse[]>(`${this.apiUrl}/my-orders/${userId}`);
 }
     getAllOrdersById(id: number): Observable<OrderResponse> {
                 return this.http.get<OrderResponse>(`${this.apiUrl}/${id}`);

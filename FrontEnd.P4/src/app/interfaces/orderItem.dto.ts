@@ -14,7 +14,7 @@ export interface OrderItemResponse{
 orderItemId: number;
 orderId: number;
 productId: number;
-// price: DecimalPipe;
+price: number;
 productNameSnapshot: string;
 unitPriceSnapshot: DecimalPipe;
 quantity: number;
